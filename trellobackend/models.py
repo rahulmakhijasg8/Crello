@@ -3,8 +3,7 @@ from django.db import models
 from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
 
-alpha = RegexValidator(r'^[a-zA-Z]*$', 'Only alphabetic characters are allowed.')
-
+alpha = RegexValidator(r'^[a-zA-Z_ ]*$', 'Only alphabetic characters are allowed.')
 
 class Workspace(models.Model):
     creator = models.ForeignKey(User, on_delete=models.PROTECT)
